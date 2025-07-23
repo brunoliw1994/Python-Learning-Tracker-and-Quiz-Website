@@ -64,7 +64,8 @@ These resources helped guide my project development from setup to polish:
 - W3Schools - Flask Tutorial: https://www.w3schools.com/python/python_flask.asp
 - Python JSON Module Docs: https://docs.python.org/3/library/json.html
 - MDN Web Docs - HTML/CSS: https://developer.mozilla.org/
-- Bootstrap Icons: https://icons.getbootstrap.com/- Jinja2 Templating Engine: https://jinja.palletsprojects.com/
+- Bootstrap Icons: https://icons.getbootstrap.com/
+- Jinja2 Templating Engine: https://jinja.palletsprojects.com/
 - Real Python - Flask by Example: https://realpython.com/flask-by-example-part-1-project-setup/
 - GeeksforGeeks - Python Projects: https://www.geeksforgeeks.org/python-projects-beginner-to-advanced/
 - Stack Overflow: https://stackoverflow.com/
