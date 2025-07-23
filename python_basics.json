@@ -1,0 +1,17 @@
+[
+  {
+    "question": "What is the output of print(2 ** 3)?",
+    "options": ["5", "6", "8", "9"],
+    "answer": "8"
+  },
+  {
+    "question": "Which keyword is used to define a function in Python?",
+    "options": ["function", "def", "lambda", "fun"],
+    "answer": "def"
+  },
+  {
+    "question": "What data type is the result of: 3 / 2?",
+    "options": ["int", "float", "str", "bool"],
+    "answer": "float"
+  }
+]
