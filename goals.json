@@ -1,0 +1,83 @@
+[
+    {
+        "type": "complete_quizzes",
+        "target_value": "",
+        "start_date": "2025-07-12",
+        "end_date": "2025-07-12",
+        "due_time": "22:00",
+        "show_on_homepage": true,
+        "completed": false
+    },
+    {
+        "type": "complete_quizzes",
+        "start_date": "2025-07-12",
+        "end_date": "2025-07-12",
+        "due_time": "22:39"
+    },
+    {
+        "type": "complete_quizzes",
+        "start_date": "2025-07-12",
+        "end_date": "2025-07-12",
+        "due_time": "22:40"
+    },
+    {
+        "type": "complete_quizzes",
+        "start_date": "2025-07-12",
+        "end_date": "2025-07-12",
+        "due_time": "22:45"
+    },
+    {
+        "type": "complete_quizzes",
+        "start_date": "2025-07-12",
+        "end_date": "2025-07-12",
+        "due_time": "22:50"
+    },
+    {
+        "type": "complete_quizzes",
+        "start_date": "2025-07-12",
+        "end_date": "2025-07-12",
+        "due_time": "22:50"
+    },
+    {
+        "type": "complete_quizzes",
+        "start_date": "2025-07-12",
+        "end_date": "2025-07-12",
+        "due_time": "22:52"
+    },
+    {
+        "type": "complete_quizzes",
+        "start_date": "2025-07-12",
+        "end_date": "2025-07-12",
+        "due_time": "22:54"
+    },
+    {
+        "type": "complete_quizzes",
+        "start_date": "2025-07-12",
+        "end_date": "2025-07-12",
+        "due_time": "22:59"
+    },
+    {
+        "type": "complete_quizzes",
+        "start_date": "2025-07-12",
+        "end_date": "2025-07-12",
+        "due_time": "12:01"
+    },
+    {
+        "type": "complete_quizzes",
+        "start_date": "2025-07-12",
+        "end_date": "2025-07-12",
+        "due_time": "23:04"
+    },
+    {
+        "type": "improve_score",
+        "start_date": "2025-07-12",
+        "end_date": "2025-07-12",
+        "due_time": "23:37"
+    },
+    {
+        "type": "streak",
+        "start_date": "2025-07-12",
+        "end_date": "2025-07-12",
+        "due_time": "14:55"
+    }
+]
