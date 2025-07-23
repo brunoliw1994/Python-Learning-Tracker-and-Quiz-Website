@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Quiz Results</h2>
+<p>Score: {{ score }} / {{ total }}</p>
+<ul>
+  {% for item in feedback %}
+    <li>
+      <strong>{{ item.question }}</strong><br>
+      Your answer: {{ item.selected }}<br>
+      Correct answer: {{ item.correct }}<br>
+      Explanation: {{ item.explanation }}<br>
+      {% if item.is_correct %}
+        ✅ Correct
+      {% else %}
+        ❌ Incorrect
+      {% endif %}
+    </li>
+    <hr>
+  {% endfor %}
+</ul>
+<a href="/history">View Progress</a>
+{% endblock %}

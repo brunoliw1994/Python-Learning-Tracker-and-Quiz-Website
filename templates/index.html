@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="hero">
+  <h1>🚀 Welcome to the Python Learning Quiz Tracker App</h1>
+
+  {% if active_goal %}
+  <div style="padding: 16px; background-color: #e6f2ff; border-left: 4px solid #0077cc; margin-bottom: 20px; color: #002244;">
+    <strong style="color:#cc0052; font-size: 1.2em;">📌 Active Goal:</strong><br><br>
+
+    <span style="font-size: 1em;">
+    {% if active_goal.type == 'target_score' %}
+      🎯 Score at least <strong>{{ active_goal.target_value }}%</strong> on a quiz
+    {% elif active_goal.type == 'improve_score' %}
+      📈 Improve your quiz score by <strong>{{ active_goal.target_value }}%</strong>
+    {% elif active_goal.type == 'complete_quizzes' %}
+      ✅ Complete <strong>{{ active_goal.target_value }}</strong> quizzes
+    {% elif active_goal.type == 'streak' %}
+      🔁 Take a quiz every day for <strong>{{ active_goal.target_value }}</strong> days
+    {% elif active_goal.type == 'perfect_score_hard' %}
+      💯 Score 100% on a <strong>hard-level</strong> quiz
+    {% elif active_goal.type == 'timed_completion' %}
+      ⏱️ Finish a quiz in under <strong>{{ active_goal.target_value }}</strong> minutes
+    {% endif %}
+    </span>
+
+    <br><br>
+    ⏳ <strong style="color:#003366;">{{ active_goal.days_left }} days left</strong> (until {{ active_goal.end_date }})
+
+    {% if active_goal.near_deadline %}
+    <div style="margin-top: 10px; color: red; font-weight: bold;">
+      ⚠️ Your goal deadline is near!
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if progress > 0 %}
+  <div style="margin-top: 10px;">
+    <label><strong>Progress:</strong> {{ progress }}%</label>
+    <div style="height: 20px; background: #1f3f60; border-radius: 8px; overflow: hidden;">
+      <div style="width: {{ progress }}%; background: #2ecc71; height: 100%; text-align: center; color: white; font-weight: bold;">
+        {{ progress }}%
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <p style="margin-top: 20px;">Your personalized hub to master Python programming through goal tracking and smart quizzes.</p>
+  <div class="cta-buttons">
+    <a href="/register" class="button">📝 Register & Set Goal</a>
+    <a href="/quiz-config" class="button">🎯 Start Quiz</a>
+    <a href="/history" class="button">📊 View Progress</a>
+  </div>
+</div>
+
+<div class="features">
+  <h2>📌 What You Can Do</h2>
+  <ul>
+    <li>✅ Set personalized learning goals and stay on track</li>
+    <li>✅ Take quizzes tailored to your skill level</li>
+    <li>✅ Get instant feedback and detailed explanations</li>
+    <li>✅ Monitor your progress with performance history</li>
+  </ul>
+</div>
+
+<div class="quote-section">
+  <blockquote>
+    "Learning Python is not about memorizing syntax, it's about learning how to think." <br>– Guido van Rossum
+  </blockquote>
+</div>
+{% endblock %}

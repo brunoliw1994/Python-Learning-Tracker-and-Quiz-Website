@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>🧪 Python Quiz</h2>
+
+{% if timed %}
+  <p><strong>⏱ Time Limit:</strong> {{ time_limit }} minutes</p>
+{% endif %}
+
+<form method="POST" action="/quiz">
+  {% for question in questions %}
+    {% set q_index = loop.index0 %}
+    <div class="question-block">
+      <p><strong>Question {{ loop.index }}:</strong> {{ question.question }}</p>
+
+      {% for option in question.options %}
+        <label>
+          <input type="radio" name="q{{ q_index }}" value="{{ option }}" required>
+          {{ option }}
+        </label><br>
+      {% endfor %}
+    </div>
+    <hr>
+  {% endfor %}
+
+  <button type="submit" class="button">✅ Submit Quiz</button>
+</form>
+{% endblock %}
