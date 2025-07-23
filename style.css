@@ -1,0 +1,114 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5faff;
+    margin: 0;
+    padding: 0;
+    color: #203040;
+}
+
+nav {
+    background-color: #1e3a5f;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero {
+    background: linear-gradient(to right, #0077cc, #005fa3);
+    padding: 50px 20px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.cta-buttons .button {
+    background-color: #ffffff;
+    color: #005fa3;
+    border: 2px solid #ffffff;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.cta-buttons .button:hover {
+    background-color: #f0f8ff;
+    color: #003e73;
+    border-color: #cce5ff;
+}
+
+.features h2 {
+    color: #005fa3;
+    margin-top: 40px;
+    font-size: 28px;
+}
+
+.features ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.features li {
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-left: 6px solid #0077cc;
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+.quote-section {
+    margin-top: 40px;
+    background-color: #eef6ff;
+    padding: 30px;
+    text-align: center;
+    font-style: italic;
+    color: #334d66;
+    border-radius: 8px;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.03);
+}
+
+.goal-option {
+  margin-bottom: 15px;
+  background-color: #f0f8ff;
+  padding: 12px;
+  border-left: 4px solid #0077cc;
+  border-radius: 6px;
+}
+.goal-option small {
+  display: block;
+  color: #555;
+  margin-top: 4px;
+  font-size: 14px;
+}
