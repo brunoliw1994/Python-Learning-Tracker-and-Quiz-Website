@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+{% block content %}
+<div style="padding: 20px; background-color: #f0f8ff; border-radius: 8px; color: #002244;">
+  <h2 style="margin-bottom: 20px; color: #004080;">🎯 Set Your Goal</h2>
+
+  <form method="POST" action="/goal">
+    <label><strong>1. Goal Tracking Kind:</strong></label>
+    <select name="goal_type" id="goal_type" required onchange="updateGoalOptions()" style="margin-bottom: 20px;">
+      <option value="">-- Choose Goal Type --</option>
+      <option value="target_score">🎯 Reach a Target Score — (e.g., Score 90%)</option>
+      <option value="improve_score">📈 Improve Score Over Time — (e.g., +20%)</option>
+      <option value="complete_quizzes">📝 Complete Number of Quizzes — (e.g., 5 quizzes)</option>
+      <option value="streak">🔥 Achieve a Streak — (e.g., daily for 7 days)</option>
+      <option value="perfect_score_difficulty">🏆 Score 100% on a Specific Difficulty</option>
+      <option value="timed_completion">⏱️ Complete a Quiz Within a Time Limit — (e.g., under 10 min)</option>
+    </select>
+
+    
+    <div id="dynamic_goal_input" style="margin-top: 10px; margin-bottom: 20px;"></div>
+
+    <label><strong>3. Start Date:</strong></label>
+    <input type="date" name="start_date" required><br><br>
+
+    <label><strong>4. End Date:</strong></label>
+    <input type="date" name="end_date" required><br><br>
+
+    <label><strong>5. Due Time:</strong></label>
+    <input type="time" name="due_time" required><br><br>
+
+    <button type="submit" class="button" style="background-color: #0056b3; color: white; padding: 10px 20px; border: none; border-radius: 4px;">
+      ✅ Submit Goal
+    </button>
+  </form>
+
+  {% if user_goal %}
+    <div style="
+      margin-top: 30px;
+      padding: 18px;
+      background-color: #e6ffee;
+      border-left: 4px solid #2e8b57;
+      border-radius: 6px;
+      font-size: 1.1em;
+      color: #002b36;
+      box-shadow: 1px 1px 6px rgba(0,0,0,0.15);">
+      <strong style="color: #007acc; font-size: 1.3em;">🎯 Goal Confirmation</strong><br><br>
+      ✅ {{ user_goal }}
+    </div>
+  {% endif %}
+</div>
+
+<script>
+function updateGoalOptions() {
+  const type = document.getElementById("goal_type").value;
+  const container = document.getElementById("dynamic_goal_input");
+  let html = "";
+
+  if (type === "target_score") {
+    html = `
+      <label><strong>2. Target Score (%):</strong></label>
+      <select name="goal_value" required>
+        ${Array.from({length: 101}, (_, i) => `<option value="${i}">${i}%</option>`).join('')}
+      </select>
+    `;
+  } else if (type === "improve_score") {
+    html = `
+      <label><strong>2. Improve by (%):</strong></label>
+      <select name="goal_value" required>
+        ${Array.from({length: 101}, (_, i) => `<option value="${i}">${i}%</option>`).join('')}
+      </select>
+    `;
+  } else if (type === "complete_quizzes") {
+    html = `
+      <label><strong>2. Number of Quizzes:</strong></label>
+      <select name="goal_value" required>
+        ${Array.from({length: 100}, (_, i) => `<option value="${i+1}">${i+1}</option>`).join('')}
+      </select>
+    `;
+  } else if (type === "streak") {
+    html = `
+      <label><strong>2. Streak Length (days):</strong></label>
+      <select name="goal_value" required>
+        ${Array.from({length: 30}, (_, i) => `<option value="${i+1}">${i+1} day(s)</option>`).join('')}
+      </select>
+    `;
+  } else if (type === "perfect_score_difficulty") {
+    html = `
+      <label><strong>2. Choose Difficulty:</strong></label>
+      <select name="goal_value" required>
+        <option value="easy">Easy</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="hard">Hard</option>
+      </select>
+    `;
+  } else if (type === "timed_completion") {
+    html = `
+      <label><strong>2. Time Limit (minutes):</strong></label>
+      <select name="goal_value" required>
+        ${Array.from({length: 240}, (_, i) => `<option value="${i+1}">${i+1} minute(s)</option>`).join('')}
+      </select>
+    `;
+  } else {
+    html = "";
+  }
+
+  container.innerHTML = html;
+}
+</script>
+{% endblock %}

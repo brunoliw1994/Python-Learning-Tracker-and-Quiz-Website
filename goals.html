@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>🎯 My Goals</h2>
+
+{% for goal in goals %}
+  <div style="margin-bottom: 15px; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+    <strong>Goal Type:</strong> {{ goal.type }}<br>
+    <strong>Target:</strong> {{ goal.target_value }}<br>
+    <strong>From:</strong> {{ goal.start_date }} to {{ goal.end_date }} at {{ goal.due_time }}<br>
+    <strong>Status:</strong> 
+    {% if goal.completed %} ✅ Completed
+    {% else %} 🔄 Active
+    {% endif %}
+    <form method="POST" action="/delete-goal" style="margin-top: 5px;">
+      <input type="hidden" name="goal_index" value="{{ loop.index0 }}">
+      <button type="submit" class="button" style="background-color: #dc3545;">🗑 Delete Goal</button>
+    </form>
+  </div>
+{% else %}
+  <p>No goals set yet.</p>
+{% endfor %}
+
+<a href="/" class="button">⬅ Back to Home</a>
+{% endblock %}
